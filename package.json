@@ -1,7 +1,7 @@
 {
   "name": "diagnose-tool",
   "version": "1.0.0",
-  "description": "Node server.",
+  "description": "Port diagnose tool",
   "main": "server.js",
   "engines": {
     "node": "18.3.0",
