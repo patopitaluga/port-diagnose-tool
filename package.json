@@ -1,0 +1,17 @@
+{
+  "name": "diagnose-tool",
+  "version": "1.0.0",
+  "description": "Node server.",
+  "main": "server.js",
+  "engines": {
+    "node": "18.3.0",
+    "npm": "8.0.11"
+  },
+  "scripts": {
+    "start": "node server",
+    "test": "node test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
