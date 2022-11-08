@@ -4,7 +4,7 @@ const ports = [
   80, // http
   82, // ngrok
   83, // ngrok
-  123, // ntp
+  // 123, // ntp NOT available from node. Alernative check: nc -vz the-ip 123
   443, // https
   1883, // emqtt
   4443, // ngrok tunneling
