@@ -1,6 +1,6 @@
 
 const ports = [
-  // 53, // dns
+  53, // dns
   80, // http
   82, // ngrok
   83, // ngrok
@@ -14,8 +14,23 @@ const ports = [
   9000, // firmware upgrade
 ];
 
-ports.forEach(async(port) => {
-  const response = await fetch('http://localhost:80')
-    .catch((err) => console.error('Error: ', err));
-  console.log(`Port ${port}: ${response.status}`);
-});
+let theIp = '';
+
+let c = 0;
+const testOnePort = (port) => {
+  console.log(`Fetching: http://${theIp}:${port}`);
+  fetch(`http://${theIp}:${port}`)
+    .then(() => {
+      // console.log(`Port ${port}: ${response.status}`);
+    })
+    .catch(() => {
+      console.log('Error fetching port ' + port);
+      // throw err;
+    })
+    .finally(() => {
+      c++;
+      if (ports[c])
+        testOnePort(ports[c]);
+    });
+};
+testOnePort(ports[c]);

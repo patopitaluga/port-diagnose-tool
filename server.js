@@ -1,7 +1,7 @@
 const httpServer = require('http');
 
 const ports = [
-  // 53, // dns
+  53, // dns
   80, // http
   82, // ngrok
   83, // ngrok
@@ -15,8 +15,10 @@ const ports = [
   9000, // firmware upgrade
 ];
 
+console.log(`Server listening ports: ${ports.join(',')}`)
 ports.forEach((port) => {
-  httpServer.createServer((req, res) => res.end('1')).listen(port);
+  const server = httpServer.createServer((req, res) => res.end('1')).listen(port);
+  server.on('error', function (e) {
+    console.log('Can\'t use port ' + port);
+  });
 });
-
-console.log(`Server listening ports: ${ports.join(', ')}`)
