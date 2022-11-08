@@ -14,7 +14,7 @@ const ports = [
   9000, // firmware upgrade
 ];
 
-let theIp = '';
+let theIp = process.argv[2];
 
 let c = 0;
 const testOnePort = (port) => {
