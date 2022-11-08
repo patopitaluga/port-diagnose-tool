@@ -1,6 +1,6 @@
 
 const ports = [
-  53, // dns
+  // 53, // dns
   80, // http
   82, // ngrok
   83, // ngrok
