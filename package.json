@@ -1,7 +1,7 @@
 {
   "name": "diagnose-tool",
   "version": "1.0.0",
-  "description": "Port diagnose tool",
+  "description": "Node server listening to different ports for the firmware dev team to do diagnose tasks.",
   "main": "server.js",
   "engines": {
     "node": "18.3.0",
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node server",
-    "test": "node test"
+    "test": "node --experimental-vm-modules test-cli"
   },
   "keywords": [],
   "author": "",
